@@ -1,0 +1,649 @@
+﻿<!--物品定义:名称，图片，说明，等级、美观，消耗物品，-->
+<ThingDefs><List>
+	<!--天水定神丹-->
+	<ThingDef Type="Item" Name="Item_Dan_CalmSuperDown" Parent="DanBase">
+		<ThingName>天水定神丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao01</TexPath>
+		<Desc>以清心草，寒晶砂精炼而成的丹药，可以衍生生土属性伤害，锁闭神魂。</Desc>	
+		<Rate>9</Rate>
+		<Beauty>16</Beauty>
+		<ElementKind>Shui</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Food>
+				<EatDirectable>1</EatDirectable>
+				<Damages>
+					<li PartName="TheWholeBody" Name="Tu_BrainClose" Rate="1"/>
+				</Damages>
+			</Food>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<!-- <Item name = "Item_ShuiEssence" count = "1"/> -->
+					<Item name = "Item_SilverGrit" count = "20"/>
+					<Item name = "Item_Mint" count = "100"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Shui</Kind>
+			<Value>3</Value>   
+		</Element>
+	</ThingDef>
+
+	<!--五气开天丹  无瑕五气丹--> 
+	<ThingDef Type="Item" Name="Item_Dan_KaiTianDan2" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>无瑕五气丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao04</TexPath>
+		<Desc>返璞归真，以最普通的药材为基，窃取天地五气，永久提高五维各九点，小幅稳固心境</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<Modifier>Dan_KaiTianDan</Modifier>
+				<Fesistance>1</Fesistance>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_Mint" count = "5"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+		<Light>
+			<Value>12</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>F1FF00FF</Color>
+		</Light>
+	
+	</ThingDef>
+
+	<!--伪-造化神丹-->
+	<ThingDef Type="Item" Name="Item_Dan_Wei_ExtremeLofty" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>伪-造化神丹</ThingName>
+		<TexPath>res\Sprs\object\object_HULUdanyao01</TexPath>
+		<Desc>夺天地造化的神丹，用以重生。因仿照灵源种而制，因此可埋在地下，化作灵脉延展，缓慢将周围地块造化为灵土或灵水。佩戴则可遮蔽天道，降低道行。</Desc>	
+		<Rate>1</Rate>	
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth2</li>
+				<li>Hard1</li>
+				<li>GreatThing_Ling</li>
+			</PhysicalLables>
+			<Elixir>
+				<Lingering>1</Lingering>
+				<Reborn>1</Reborn>
+				<!-- <Modifier>Dan_LingYuanZhong</Modifier> -->
+			</Elixir>
+			<Equip>
+				<ToolModifier>Dan_LingYuanZhong_Equip</ToolModifier>
+			</Equip> 	
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_Mint" count = "5"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Ling>
+			<AddionLing>90</AddionLing>
+		</Ling>
+		<Light>
+			<Value>10</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>FFAE00FF</Color>
+		</Light>
+		<StoryBnts>
+			<li Name="埋下" Desc="将此物埋在地下。" Script="world:CastMagic(bind,'Other_BuryObject','res/Sprs/ui/icon_hand')" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value> 
+		</Element>
+	</ThingDef>
+
+	<!--升灵丹-->
+	<ThingDef Type="Item" Name="Item_Dan_ShengLing" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>升灵丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao06</TexPath>
+		<Desc>撷取天地清气，褪凡升灵，提升100万最大灵气值，获得15万天道参悟。</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<Modifier>Dan_ShengLing</Modifier>
+				<!-- <Modifier>Modifier_Item_Dan_FabaoNumAdd</Modifier> -->
+				<TreeExp>150000</TreeExp>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_Mint" count = "5"/>
+					<Item name = "Item_LingStone" count = "5"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+		<Light>
+			<Value>12</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>F1FF00FF</Color>
+		</Light>
+	
+	</ThingDef>
+
+	<!--小升灵丹-->
+	<ThingDef Type="Item" Name="Item_Dan_XiaoShengLing" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>小升灵丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao06</TexPath>
+		<Desc>宇宙无垠而人力有穷，小大之辩其正见邪？提升10万最大灵气值，获得1.5万天道参悟。</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<Modifier>Dan_XiaoShengLing</Modifier>
+				<!-- <Modifier>Modifier_Item_Dan_FabaoNumAdd</Modifier> -->
+				<TreeExp>15000</TreeExp>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_Mint" count = "1"/>
+					<Item name = "Item_LingStone" count = "1"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+		<Light>
+			<Value>2</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>F1FF00FF</Color>
+		</Light>
+	
+	</ThingDef>
+
+	<!--十万聚灵丹-->
+	<ThingDef Type="Item" Name="Item_Dan_ShiWanJuLing" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>十万聚灵丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao05</TexPath>
+		<Desc>恢复十万点灵气。</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<Ling>100000</Ling>
+				<TreeExp>100000</TreeExp>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_Mint" count = "5"/>
+					<Item name = "Item_LingStone" count = "5"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+		<Light>
+			<Value>12</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>F166CCFF</Color>
+		</Light>
+	
+	</ThingDef>
+	
+	<!--百万聚灵丹-->
+	<ThingDef Type="Item" Name="Item_Dan_BaiWanJuLing" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>百万聚灵丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao05</TexPath>
+		<Desc>恢复百万点灵气。</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<Ling>1000000</Ling>
+				<TreeExp>1000000</TreeExp>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_Mint" count = "5"/>
+					<Item name = "Item_LingStone" count = "50"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+		<Light>
+			<Value>12</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>F12E63F1</Color>
+		</Light>
+	
+	</ThingDef>
+	
+	<!--精元千灵丹-->
+	<ThingDef Type="Item" Name="Item_Dan_JingYuanQianLing" Parent="DanBase">
+		<MaxStack>100</MaxStack>s
+		<ThingName>精元千灵丹</ThingName>
+		<TexPath>res\Sprs\object\object_PINGdanyao04</TexPath>
+		<Desc>增加一千精元。</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Food>
+				<EatDirectable>1</EatDirectable>	
+				<PracticeNutrition>1000</PracticeNutrition>
+			</Food>	
+			<Elixir>
+				<ZhuJi>10</ZhuJi>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+		<Light>
+			<Value>12</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>F166CC00</Color>
+		</Light>
+	
+	</ThingDef>
+	
+	<!--修为转金丹-->
+	<ThingDef Type="Item" Name="Item_Dan_XiuWeiZhuanJin" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>修为转金丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao04</TexPath>
+		<Desc>隐修佛门参考道门九转金丹丹方，集众生愿力炼制而出。提升修炼速度，提升历练速度。</Desc>		
+		<Rate>1</Rate>	
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth2</li>
+				<li>Hard1</li>
+			</PhysicalLables>
+			<Elixir>
+				<Ling>100</Ling>
+				<Modifier>Dan_XiuWeiZhuanJin</Modifier>
+				<!-- 餐霞洞大成功调用： me:AddPracticeResource("Stage",20 * me:GetGLevel() * me:GetGLevel() * me:GetGLevel()) -->
+			</Elixir>
+			<BeMade>
+				<WorkToMake>1000</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingCrystal" count = "1"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value> 
+		</Element>
+		<Light>
+			<Value>10</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>2</Radius>
+			<Color>F1CC6688</Color>
+		</Light>
+	</ThingDef>
+				
+	<!--神物丹-->
+	<ThingDef Type="Item" Name="Item_Dan_ShenWu" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>神物丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao03</TexPath>
+		<Desc>生而神物，快速回复角色的所有肉体伤势。似乎适宜炼为法宝。</Desc>	
+		<Rate>12</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard3</li>
+				<li>Light2</li>
+				<li>HighDensity2</li>
+				<li>GreatThing_Attack</li>
+			</PhysicalLables>
+			<Elixir>
+				<RecoveryLable>
+					<li>Dfood</li>
+					<li>None</li>
+					<li>OldScar</li>
+					<li>Jin</li>
+					<li>Mu</li>
+					<li>Shui</li>
+					<li>Huo</li>
+					<li>Tu</li>
+					<li>Ling</li>
+				</RecoveryLable>
+				<RecoveryValue>1000</RecoveryValue>
+				<RecoveryDuration>0.04</RecoveryDuration>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>12</Value>   
+		</Element>
+		<Light>
+			<Value>12</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>F0CC0000</Color>
+		</Light>
+	
+	</ThingDef>
+	
+	<!--聚魂丹-->
+	<ThingDef Type="Item" Name="Item_Dan_JuHun" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>聚魂丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao03</TexPath>
+		<Desc>玄牝之门，是天地之根。灵气经过玄牝之门，得以回复魂魄伤势。</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard3</li>
+				<li>Light2</li>
+				<li>HighDensity2</li>
+				<li>GreatThing_Attack</li>
+			</PhysicalLables>
+			<Elixir>
+				<RecoveryLable>
+					<li>Soul</li>
+				</RecoveryLable>
+				<RecoveryValue>1000</RecoveryValue>
+				<RecoveryDuration>0.04</RecoveryDuration>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+		<Light>
+			<Value>12</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>F0CC0000</Color>
+		</Light>
+	
+	</ThingDef>
+
+
+
+	<!-- 傀龙丹 -->
+	<ThingDef Type="Item" Name="Item_Dan_KuiLong" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>傀龙灵丹</ThingName>
+		<TexPath>res\Sprs\object\object_longhunzhenlingdan01</TexPath>
+		<Desc>以灵气幻化傀龙炼制的灵丹，服用可将其炼化为一道分神，额外驾驭一件法宝。只有第一次服用有效。</Desc>	
+		<Rate>1</Rate>	
+		<Beauty>25</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<NotFengshuiItem>0</NotFengshuiItem>
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<Lingering>1</Lingering>
+				<Modifier>Modifier_Item_Dan_FabaoNumAdd</Modifier>
+				<Fesistance>0</Fesistance>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingStone" count = "100"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>25</Value> 
+		</Element>
+	</ThingDef>
+	
+	<!--转劫延寿丹-->
+	<ThingDef Type="Item" Name="Item_Dan_ZhuanJieYanShou" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>转劫延寿丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao03</TexPath>
+		<Desc>增加490年阳寿，延后天劫49天。</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<Modifier>Dan_ZhuanJieYanShou</Modifier>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingStone" count = "5"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+		<Light>
+			<Value>12</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>F1000000</Color>
+		</Light>
+	
+	</ThingDef>
+	
+	<!--窃道欺天丹-->
+	<ThingDef Type="Item" Name="Item_Dan_QieDaoQiTian" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>窃道欺天丹</ThingName>
+		<TexPath>res\Sprs\object\object_DAdanyao03</TexPath>
+		<Desc>窃道欺天，减少道行与天谴值各64点。</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<Elixir>
+				<Modifier>Dan_QieDaoQiTian</Modifier>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingStone" count = "5"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+		<Light>
+			<Value>12</Value>
+			<Failing>0.8</Failing>
+			<FailRadius>1</FailRadius>
+			<Radius>3</Radius>
+			<Color>F1FFFFFF</Color>
+		</Light>
+	
+	</ThingDef>
+	
+
+	<!-- 石匣丹 -->
+		<ThingDef Type="Item" Name="Item_Dan_ShiXia" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>石匣丹</ThingName>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>能沟通丹祖意念的石匣状灵丹，打开能够获得一门世间传承的功法。</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="打开石匣丹。" Story="Story_Item_ShiXiaDan" Cost="2" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+	</ThingDef>
+
+	<!-- 祖师丹 -->
+		<ThingDef Type="Item" Name="Item_Dan_ZuShi" Parent="DanBase">
+		<MaxStack>100</MaxStack>
+		<ThingName>祖师丹</ThingName>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>五维灵丹祖师虽藉藉无名，但是早已身合丹道，世称丹祖师。以祖师丹祭祀，沟通丹祖，冥冥中会生成珍惜之宝物。</Desc>	
+		<Rate>1</Rate>
+		<Beauty>30</Beauty>
+		<ElementKind>Mu</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth1</li>
+				<li>Hard1</li>
+				<li>Light1</li>
+			</PhysicalLables>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<StoryBnts>
+			<li Name="祭祀" Desc="祭祀祖师丹。" Story="Story_Item_ZuShiDan" Cost="2" Icon="res/Sprs/ui/icon_lingxi01"/>
+		</StoryBnts>
+		<Element>
+			<Kind>Mu</Kind>
+			<Value>1</Value>   
+		</Element>
+	</ThingDef>
+</List></ThingDefs>

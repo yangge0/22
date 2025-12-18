@@ -1,0 +1,95 @@
+﻿<!--模板生成器，定义效果-->
+<ModifierDefs><List>
+	<!--驱魔丹-->
+	<Modifier Name="Dan_QuMo" Type="Normal">
+		<DisplayName>驱魔丹</DisplayName>
+		<Desc>食用驱魔丹，绝大程度上平复心境，且在五天之内巨大幅降低心境波动。</Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>3000</Duration>
+		<Display>1</Display>
+		<Properties>
+			<li Name="MindStateBaseValue" AddV="60"/>
+			<li Name="SpeedOfMindStateCoefficient" AddP="-0.98"/>
+		</Properties>
+	</Modifier>
+	<!--五气开天丹-->
+	<Modifier Name="Dan_KaiTianDan" Type="Normal">
+		<DisplayName>五气开天丹</DisplayName>
+		<Desc>食用五气开天丹，提升五维属性各九点</Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<BaseFive>9,9,9,9,9</BaseFive>
+		<Properties>
+			<li Name="MindStateBaseValue" AddV="10"/>
+			<li Name="SpeedOfMindStateCoefficient" AddP="-0.1"/>
+		</Properties>
+	</Modifier>
+	
+	<!--升灵丹-->
+	<Modifier Name="Dan_ShengLing" Type="Normal">
+		<DisplayName>升灵</DisplayName>
+		<Desc>灵气上限提高1000000点。</Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<Properties>
+			<li Name="NpcLingMaxValue" AddV="1000000"/>
+		</Properties>
+	</Modifier> 
+
+	<!--小升灵丹-->
+	<Modifier Name="Dan_XiaoShengLing" Type="Normal">
+		<DisplayName>小升灵</DisplayName>
+		<Desc>灵气上限提高100000点。</Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<Properties>
+			<li Name="NpcLingMaxValue" AddV="100000"/>
+		</Properties>
+	</Modifier> 
+	
+	<!--修为转金丹-->
+	<Modifier Name="Dan_XiuWeiZhuanJin" Type="Normal">
+		<DisplayName>提高修炼速度-（转金丹）\n增加历练速度
+		</DisplayName>
+		<Desc></Desc>
+		<MaxStack>100</MaxStack>
+		<Duration>16800</Duration>
+		<Display>1</Display>
+		<Properties>
+			<li Name="DeepPracticeSpeedSpecialCoefficient" AddP="20"/>
+			<li Name="WorldMapFlySpeedAddP" AddV="20"/>
+		</Properties>
+	</Modifier> 
+
+	<!--转劫延寿丹-->
+	<Modifier Name="Dan_ZhuanJieYanShou" Type="Normal">
+		<DisplayName>增加阳寿，延后天劫</DisplayName>
+		<Desc></Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<Properties>
+			<li Name="MaxAge" AddV="490"/>
+			<li Name="NeckCountdownAddV" AddV="29400"/>
+		</Properties>
+	</Modifier> 
+
+	<!-- 窃道欺天丹 -->
+	<Modifier Name="Dan_QieDaoQiTian" Type="Normal">
+		<DisplayName>窃道欺天，减少道行与天谴值各64点</DisplayName>
+		<Desc></Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<Properties>
+			<li Name="AbilityLvAddV" AddV="-64"/>
+			<li Name="GodPenaltyAddV" AddV="-64"/>
+		</Properties>
+	</Modifier> 
+
+
+	
+</List></ModifierDefs>

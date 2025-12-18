@@ -1,0 +1,312 @@
+﻿<Stories><List>	
+
+    <Story Name="Story_Item_ShiXiaDan">
+		<DisplayName>石匣丹</DisplayName>
+		<Desc>炼丹结束竟飞出个石匣，其外壳上时不时闪烁光彩，不似凡物。</Desc>
+		<Kind>None</Kind>
+		<Selections>
+			<li>
+				<Display>徒手打开</Display>
+				<OKResult>
+				<![CDATA[	
+				me:AddMsg(XT("顺着石匣的裂缝，[NAME]轻松的打开了匣子"));
+				me:AddMsg(XT("打开的石匣中发现一本小册子，翻开一看竟然是一本可以修行的功法，而石匣丹竟又恢复了原状。"));
+				local nR = me:RandomInt(6, 12);
+				if nR == 1 then
+					me:UnLockGong("Gong_1_Shui");
+					me:AddMsg(XT("得到了《太和十六洞天》"));
+				elseif nR == 2 then
+					me:UnLockGong("Gong_8_Jin");
+					me:AddMsg(XT("得到了《北斗洞心劫法》"));
+				elseif nR == 3 then
+					me:UnLockGong("Gong_9_Mu");
+					me:AddMsg(XT("得到了《长生六道轮回经》"));
+				elseif nR == 4 then
+					me:UnLockGong("Gong_10_Huo");
+					me:AddMsg(XT("得到了《三阳三昧丙丁炼火诀》"));
+				elseif nR == 5 then
+					me:UnLockGong("Gong_11_Tu");
+					me:AddMsg(XT("得到了《葵花炼神大法》"));
+				elseif nR == 6 then
+					me:UnLockGong("Gong_2_Mu");
+					me:AddMsg(XT("得到了《己寅九冲多宝真解》"));
+				elseif nR == 7 then
+					me:UnLockGong("Gong_3_Jin");
+					me:AddMsg(XT("得到了《七杀剑诀》"));
+				elseif nR == 8 then
+					me:UnLockGong("Gong_4_None");
+					me:AddMsg(XT("得到了《玉清仙法》"));
+				elseif nR == 9 then
+					me:UnLockGong("Gong_5_Tu");
+					me:AddMsg(XT("得到了《偷天诀》"));
+				elseif nR == 10 then
+					me:UnLockGong("Gong_6_Huo");
+					me:AddMsg(XT("得到了《九转金丹直指》"));
+				elseif nR == 11 then
+					me:UnLockGong("Gong_7_Huo");
+					me:AddMsg(XT("得到了《太上忘情道》"));
+				elseif nR == 12 then
+					me:UnLockGong("Gong_DaNeng");
+					me:AddMsg(XT("得到了大能的《未知功法》，可惜似乎无法使用。"));
+				elseif  nR == 13 then
+					me:UnLockGong("Gong_YaoShou");
+					me:AddMsg(XT("得到了妖兽的《本能修行》，不知人类能否修行。"));
+				else 
+					me:AddMsg(XT("这次运气不佳。"));
+				end
+				]]>	
+				</OKResult>
+			</li>
+		</Selections>
+	</Story>
+
+
+	<Story Name="Story_Item_ZuShiDan" Parent="BaseFillingStory">
+		<DisplayName>祖师丹</DisplayName>
+		<Desc>五维灵丹祖师虽藉藉无名，但是早已身合丹道。祭祀祖师丹，冥冥中会生成珍惜之宝物。</Desc>
+		<Kind>None</Kind>
+		<ItemCache> 
+			
+			<li>
+				<ThingDef>Item_SoulCrystalYou</ThingDef>
+				<Count>3</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_SoulCrystalLing</ThingDef>
+				<Count>3</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_SoulCrystalNing</ThingDef>
+				<Count>9</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_JinEssence</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_MuEssence</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_ShuiEssence</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_HuoEssence</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_TuEssence</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_EarthEssence</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_LifeStream</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_JadeEssence</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_ExtremeJade</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_SoulPearl</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_Soul1</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_Soul2</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_Soul3</ThingDef>
+				<Count>3</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_Soul4</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			
+			<li>
+				<ThingDef>Item_Dan_Ling2</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_Ling3</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_Defense</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_FiveBase1</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_FiveBase2</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_FiveBase3</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_FiveBase4</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_FiveBase5</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			
+			<li>
+				<ThingDef>Item_Dan_FiveBaseFromLife</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_IncreaseLife3</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_IncreaseLife2</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_IncreaseLife4</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_IncreaseLife5</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_IncreaseLife1</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_HundredRefine</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_IncreaseNeckCountdown1</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_IncreaseNeckCountdown2</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+			<li>
+				<ThingDef>Item_Dan_ExtremeLofty</ThingDef>
+				<Count>1</Count>
+				<Rate>1</Rate>
+			</li>
+		</ItemCache>
+		<ItemCache2> 
+			<li>
+				<ThingDef>Item_Dan_ZuShi</ThingDef>
+				<Count>100</Count>
+				<Rate>1</Rate>
+			</li>
+		</ItemCache2>
+
+		<Selections>
+			<li>
+				<Display>求取神器</Display>
+				<OKResult>
+				<![CDATA[	
+					me:AddMsg(XT("祖师丹化为袅袅青烟散去，引得大冶之力翻腾，化出一尊历劫神器，最后竟又凝成一枚祖师丹。"));
+					local tItem = {"Item_SpellPaper","Item_Dice","Item_SmallBell","Item_Bracelet","Item_Handkerchief","Item_PerfumeBag","Item_Other_PuppetTest","Item_WeaponBow","Item_WeaponKnife","Item_WeaponLance","Item_WeaponSword","Item_WeaponHalbert","Item_WeaponAxeRing","Item_Umbrella","Item_SysAcupuncture","Item_FunChess","Item_FunMusic","Item_FunPoem","Item_FunPainting","Item_Shit"};
+					local nT = me:RandomInt(1, #tItem + 1);
+					me:DropFabao(0,tItem[nT],"Item_Other_BuZhiMing","",XT("祖师丹化生得到的历劫神器。"),1,12,20);
+					me:DropAwardItemFromCache(story.ItemCache2, 1, 1);
+					story:RemoveBindItem();
+				]]>		
+				</OKResult>
+			</li>
+
+			<li>
+				<Display>求取筑料</Display>
+				<OKResult>
+				<![CDATA[	
+					me:AddMsg(XT("祖师丹化为袅袅青烟散去，引得因果之力翻腾，化出大量极品筑料，最后竟又凝成一枚祖师丹。"));
+					me:DropAwardItem("Item_StarEssence",100);
+					me:DropAwardItem("Item_ParasolWood",100);
+					me:DropAwardItem("Item_SilverBlock1",400);
+					me:DropAwardItem("Item_CopperBlock1",400);
+					me:DropAwardItem("Item_SkyStone",100);
+				]]>		
+				</OKResult>
+			</li>
+
+			<li>
+				<Display>求取奇珍</Display>
+				<OKResult>
+				<![CDATA[	
+					me:AddMsg(XT("祖师丹化为袅袅青烟散去，引得造化灵气涌动，变为种种奇珍，最后竟又凝成一枚祖师丹。"));
+					me:DropAwardItemFromCache(story.ItemCache, 1, 9);
+				]]>		
+				</OKResult>
+			</li>
+
+			<li>
+				<Display>求取天地灵根</Display>
+				<OKResult>
+				<![CDATA[	
+					me:AddMsg(XT("祖师丹化为袅袅青烟散去，引得五行灵气涌动，变为五种天地灵根，最后竟又凝成一枚祖师丹。"));
+					me:DropAwardItem("Item_JinEssence",1);
+					me:DropAwardItem("Item_MuEssence",1);
+					me:DropAwardItem("Item_ShuiEssence",1);
+					me:DropAwardItem("Item_HuoEssence",1);
+					me:DropAwardItem("Item_TuEssence",1);
+				]]>		
+				</OKResult>
+			</li>
+
+		</Selections>
+	</Story>
+	
+</List></Stories>
